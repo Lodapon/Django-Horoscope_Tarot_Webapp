@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-@s76r6*gr4k=9f%1$kwiuuwx)7ql#ony2x_3^n9bja!0=zjfj_'
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '+^i*qrv1j@6n&c5v_5#hx0^b1xtt*t8g(mj)+o3by@q942%fwz')
+
 
 if not SECRET_KEY:
     raise ImproperlyConfigured('The SECRET_KEY setting must not be empty.')
@@ -126,8 +127,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Optionally, set a STATIC_ROOT for collecting static files when deployed
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+if not DEBUG:  # Only when not in DEBUG mode
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
