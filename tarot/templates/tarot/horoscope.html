@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Your Tarot Horoscope</title>
+    <style>
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 30%;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .combined-meaning {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Tarot Horoscope</h1>
+    
+    <div class="cards-container">
+        {% for entry in cards %}
+            <div class="card">
+                <h2>{{ entry.card.name }}</h2>
+                <img src="{{ entry.card.image_url }}" alt="{{ entry.card.name }}">
+                <p><strong>{% if entry.is_upright %}Upright{% else %}Reversed{% endif %}:</strong> {{ entry.meaning }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+<!--     <div class="combined-meaning">
+        <h2>Combined Meaning/Interpretation:</h2>
+        <p>{{ combined_meaning|safe }}</p> 
+    </div> -->
+</body>
+</html>
