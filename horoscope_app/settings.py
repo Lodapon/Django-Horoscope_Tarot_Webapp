@@ -30,11 +30,12 @@ if not SECRET_KEY:
     raise ImproperlyConfigured('The SECRET_KEY setting must not be empty.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['.onrender.com', 'localhost']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','.onrender.com', 'https://horoscope-app-ma6d.onrender.com']
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost','.onrender.com', 'https://horoscope-app-ma6d.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 
@@ -127,9 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
-if not DEBUG:  # Only when not in DEBUG mode
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
