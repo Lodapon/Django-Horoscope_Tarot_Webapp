@@ -33,9 +33,9 @@ if not SECRET_KEY:
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['.onrender.com', 'localhost']
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost','.onrender.com', 'https://horoscope-app-ma6d.onrender.com']
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'horoscope-app-ma6d.onrender.com']
+
 
 
 
